@@ -1,0 +1,18 @@
+all: comp1 comp2 exec clean
+
+#compila cabecalho e funcoes (gera .o)
+comp1:
+	gcc -c main.c busca.c 
+
+#compila programa principal, com o .o gerado
+comp2: 
+	gcc main.o busca.o -o tp0
+
+#executa o programa principal
+exec:  
+	./tp0 input.txt output.txt
+
+#deleta arquivos .o gerados
+clean:
+	rm -rf *.o
+
